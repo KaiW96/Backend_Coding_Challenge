@@ -38,8 +38,9 @@ def index():
             price = userDetails['price']
             department = userDetails['department']
             description = userDetails['description']
+            store_URL = userDetails['store_URL']
             cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO inventory(name,price,department,description) VALUES (%s, %s,%s,%s)", (name,price,department,description))
+            cur.execute("INSERT INTO inventory(name,price,department,description,store_URL) VALUES (%s, %s,%s,%s,%s)", (name,price,department,description,store_URL))
             mysql.connection.commit()
             cur.close()
 
@@ -51,22 +52,12 @@ def index():
 
         elif request.form['submit_button'] == 'View':
             return redirect('/view')
-        '''
-        # export to csv functionality
-        elif request.form['submit_button'] == 'Export to CSV':
-               header = ['Product ID', 'Name','Price', 'Department', 'Description']
-               
-               #Had to use MySQLdb to connect instead of mysql.connection for it to work
-               db = MySQLdb.connect("localhost","root","","shopify_inventory")
-               cur = db.cursor()
-               cur.execute("SELECT * FROM inventory")
-               
-               result = cur.fetchall()
-               c = csv.writer(open('user_dump01.csv', 'w',encoding='utf-8'))
-               c.writerow(header)
-               for row in result:
-                   c.writerow(row)
-                   '''
+        elif request.form['submit_button'] == 'Export':
+          userDetails = request.form
+          product_id = userDetails['product_id']      
+          export(product_id)
+     
+        
     return render_template('index.html')
 
 """ ---- Edit API ----- """
@@ -103,12 +94,13 @@ def delete():
         if request.form['submit_button'] == 'Delete':
             userDetails = request.form
             product_id = userDetails['product_id']
+            name = userDetails['name']
             cur = mysql.connection.cursor()
             #delete query, used product id as primary key and overwrites the rest
             cur.execute("DELETE From inventory WHERE product_id = (%s)", [product_id])
             mysql.connection.commit()
             cur.close()
-    return render_template('delete.html')
+    return render_template('delete.html',product_id = product_id, name = name)
 
 """ ---- View API ----- """
 @app.route('/view',methods=['GET', 'POST'])
@@ -116,8 +108,14 @@ def users():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Return':
           return redirect('/')
+        elif request.form['submit_button'] == 'Edit':
+          return redirect('/edit')
+        elif request.form['submit_button'] == 'Delete':
+          return redirect('/delete')
         elif request.form['submit_button'] == 'Export':
-          export()
+          userDetails = request.form
+          product_id = userDetails['product_id']      
+          export(product_id)
           
 
     cur = mysql.connection.cursor()
@@ -125,19 +123,22 @@ def users():
     userDetails = cur.fetchall()
     return render_template('view.html',userDetails=userDetails)
 
-def export():
+def export(product_id):
     # export to csv functionality
-               header = ['Product ID', 'Name','Price', 'Department', 'Description']
+               header = ['Product ID', 'Name','Price', 'Department', 'Description','Store URL']
                
                #Had to use MySQLdb to connect instead of mysql.connection for it to work
                db = MySQLdb.connect("localhost","root","","shopify_inventory")
                cur = db.cursor()
-               cur.execute("SELECT * FROM inventory")
+               cur.execute("SELECT * FROM inventory WHERE product_id = (%s)", [product_id])
                
                result = cur.fetchall()
-               c = csv.writer(open('user_dump01.csv', 'w',encoding='utf-8'))
+               c = csv.writer(open('product_data.csv', 'w',encoding='utf-8'))
                c.writerow(header)
+               #c.writerow(result)
+               
                for row in result:
+                   print(product_id)
                    c.writerow(row)
 
 if __name__ == '__main__':

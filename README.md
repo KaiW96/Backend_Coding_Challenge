@@ -2,6 +2,8 @@
 
 Updated: January 2022
 
+The repository will be set to public after the submission deadline on January 19th
+
 ## Authors
 * Kai Wang
 

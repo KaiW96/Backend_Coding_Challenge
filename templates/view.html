@@ -8,6 +8,9 @@
         <th>Price</th>
         <th>Department</th>
         <th>Description</th>
+        <th>Store URL</th>
+        <th>Edit</th>
+        <th>Delete</th>
         <th>Export Data</th>
     </tr>
     </thead>
@@ -19,12 +22,28 @@
                 <td> {{inventory.price}} </td>
                 <td> {{inventory.department}} </td>
                 <td> {{inventory.description}} </td>
+                <td> {{inventory.store_URL}} </td>
                 <td>
-                <form method="POST" action="">
-                    <input type="submit" name ="submit_button" value ="Export"/> 
-                    <!--button name = "Export" value = "Hello">Export</button> -->
+                    <form method="POST" action="">
+                            <input type="submit" name ="submit_button" value ="Edit"/> 
+                            <!--button name = "Export" value = "Hello">Export</button> -->
+                          </form>
+                     </td>
+                <td>
+                <form method="POST" action="{{ url_for('delete') }}"  class=delete>
+                    <input type=hidden value="{{ inventory.product_id }}"name=product_id />
+                    <input type=hidden value="{{ inventory.name }}"name=name />
+                    <input type="submit" name ="submit_button" value ="Delete"/>
                   </form>
                 </td>
+                <td>
+                <!--form method="POST" action="">-->
+                <form method="POST" action="{{ url_for('index') }}"  class=index>
+                        <input type=hidden value="{{ inventory.product_id }}"name=product_id />
+                        <input type=hidden value="{{ inventory.name }}"name=name />
+                        <input type="submit" name ="submit_button" value ="Export"/> 
+                      </form>
+                 </td>
                
             </tr>
         {% endfor %}      

@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `shopify_inventory`.`inventory` (
   `price` VARCHAR(45) NOT NULL,
   `department` VARCHAR(45) NOT NULL,
   `description` VARCHAR(250) NOT NULL,
+  `store_URL` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`product_id`))
 ENGINE = InnoDB;
 

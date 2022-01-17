@@ -11,6 +11,6 @@ SELECT * FROM inventory;
 DELETE FROM inventory;
 
 
-INSERT INTO inventory(name,price,department,description) VALUES ("Beats by dre", 299 , "electronics", "Red beats headphones");
-INSERT INTO inventory(name,price,department,description) VALUES ("Iphone13", 1349, "electronics", "Newest apple product");
-INSERT INTO inventory(name,price,department,description) VALUES ("Sony A6000", 799, "electronics", "Sony A6000 camera, 24 megapixels");
+INSERT INTO inventory(name,price,department,description,store_URL) VALUES ("Beats by dre", 299 , "Electronics", "Red beats headphones", "Shopify.ca/apple/headphones");
+INSERT INTO inventory(name,price,department,description,store_URL) VALUES ("Iphone13", 1349, "Electronics", "Newest apple product","Shopify.ca/apple/headphones");
+INSERT INTO inventory(name,price,department,description,store_URL) VALUES ("Sony A6000", 799, "Electronics", "Sony A6000 camera, 24 megapixels", "Shopify.ca/sony/camera");
