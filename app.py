@@ -51,7 +51,7 @@ def index():
 
         elif request.form['submit_button'] == 'View':
             return redirect('/view')
-
+        '''
         # export to csv functionality
         elif request.form['submit_button'] == 'Export to CSV':
                header = ['Product ID', 'Name','Price', 'Department', 'Description']
@@ -66,6 +66,7 @@ def index():
                c.writerow(header)
                for row in result:
                    c.writerow(row)
+                   '''
     return render_template('index.html')
 
 """ ---- Edit API ----- """
@@ -112,15 +113,31 @@ def delete():
 """ ---- View API ----- """
 @app.route('/view',methods=['GET', 'POST'])
 def users():
-    if request.method == 'POST':
+    #if request.method == 'POST':
+    if request.form['submit_button'] == 'Return':
           return redirect('/')
+    elif request.form['submit_button'] == 'Export to CSV':
+          export()
 
     cur = mysql.connection.cursor()
     resultValue = cur.execute("SELECT * FROM inventory")
     userDetails = cur.fetchall()
     return render_template('view.html',userDetails=userDetails)
 
-
+def export():
+    # export to csv functionality
+               header = ['Product ID', 'Name','Price', 'Department', 'Description']
+               
+               #Had to use MySQLdb to connect instead of mysql.connection for it to work
+               db = MySQLdb.connect("localhost","root","","shopify_inventory")
+               cur = db.cursor()
+               cur.execute("SELECT * FROM inventory")
+               
+               result = cur.fetchall()
+               c = csv.writer(open('user_dump01.csv', 'w',encoding='utf-8'))
+               c.writerow(header)
+               for row in result:
+                   c.writerow(row)
 
 if __name__ == '__main__':
     app.run(debug=True)

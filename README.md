@@ -24,7 +24,7 @@ For example:
 
 	```python -m venv env```
 
-	```.\env\bin\activate```
+	```.\env\Scripts\activate```
 
 	```pip install flask```
 
