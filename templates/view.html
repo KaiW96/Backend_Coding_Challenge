@@ -1,0 +1,29 @@
+
+<table border = 1>
+    <thead>
+        <h1>Current Inventory.</h1>
+    <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Department</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for inventory in userDetails %}
+            <tr>
+                <td> {{inventory.product_id}} </td>
+                <td> {{inventory.name}} </td>
+                <td> {{inventory.price}} </td>
+                <td> {{inventory.department}} </td>
+                <td> {{inventory.description}} </td>
+            </tr>
+        {% endfor %}      
+    </tbody>
+</table>
+
+<form method="POST" action="">
+    <br>
+    <input type="submit" name ="submit_button" value ="Return"/>
+  </form>
