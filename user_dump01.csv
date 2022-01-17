@@ -1,9 +1,2 @@
-product_id,name,price,department,description
-10,iphone 11,999,electronics,old iphone 7
-11,iphone 13,1347,electronics,a brand new iphone 13
-12,Sony A6000,799,Electronics,old sony camera that is still good
-13,Tesla model X,100000,Cars,highest tesla model
-14,,,,
-17,Space X rocket,100000,Rockets,Rocket by space x
-18,Samsung E70 Dishwater,999,House Items,Brand new Samsung dishwasher.
-19,Apple Pencil,129,Electronics,3rd generation apple pencil
+Product ID,Name,Price,Department,Description
+1,Iphone 13,1349,Phones,Brand new Iphone 13

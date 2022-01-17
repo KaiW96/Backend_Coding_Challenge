@@ -8,6 +8,7 @@
         <th>Price</th>
         <th>Department</th>
         <th>Description</th>
+        <th>Export Data</th>
     </tr>
     </thead>
     <tbody>
@@ -18,7 +19,13 @@
                 <td> {{inventory.price}} </td>
                 <td> {{inventory.department}} </td>
                 <td> {{inventory.description}} </td>
-                <input type="submit" name ="submit_button" value ="Export"/>
+                <td>
+                <form method="POST" action="">
+                    <input type="submit" name ="submit_button" value ="Export"/> 
+                    <!--button name = "Export" value = "Hello">Export</button> -->
+                  </form>
+                </td>
+               
             </tr>
         {% endfor %}      
     </tbody>

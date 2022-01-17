@@ -113,11 +113,12 @@ def delete():
 """ ---- View API ----- """
 @app.route('/view',methods=['GET', 'POST'])
 def users():
-    #if request.method == 'POST':
-    if request.form['submit_button'] == 'Return':
+    if request.method == 'POST':
+        if request.form['submit_button'] == 'Return':
           return redirect('/')
-    elif request.form['submit_button'] == 'Export to CSV':
+        elif request.form['submit_button'] == 'Export':
           export()
+          
 
     cur = mysql.connection.cursor()
     resultValue = cur.execute("SELECT * FROM inventory")
