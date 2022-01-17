@@ -1,16 +1,39 @@
+<style>
+    .background-image{
 
+        background-image: url('https://htmlemail.io/img/blog-shopify.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        color: #000000;
+        opacity: 0.5;
+    }
+
+    .content{
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+</style>
+<body>
+    <div class = "background-image"></div>
+    <div class="content">
 <title>
     Shopify Backend Developer Challenge</title>
     <h1> {{name}} has been deleted</h1>
 <form method="POST" action="">
-  Product ID <input type = "number" name = "product_id"/>
+  Product ID {{product_id}}
   <br>
-  <td> {{product_id}} </td>
   <br>
-  <td> {{name}} has been deleted </td>
 </form>
 
 <form method="POST" action="">
-    <br>
+    <input type="submit" name ="submit_button" value ="View"/>
     <input type="submit" name ="submit_button" value ="Return"/>
   </form>
+
+</div>
+</body>

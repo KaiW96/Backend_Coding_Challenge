@@ -27,8 +27,19 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
-""" ---- Index API ----- """
+""" ---- MainMenu API ----- """
 @app.route('/', methods=['GET', 'POST'])
+def mainmenu():
+    if request.method == 'POST':
+        if request.form['submit_button'] == 'Create':
+            return redirect('/index')
+        elif request.form['submit_button'] == 'View':
+            return redirect('/view')
+        
+    return render_template('mainmenu.html')
+
+""" ---- Index API ----- """
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Create':
@@ -44,18 +55,11 @@ def index():
             mysql.connection.commit()
             cur.close()
 
-        elif request.form['submit_button'] == 'Edit':
-            return redirect('/edit')
-        
-        elif request.form['submit_button'] == 'Delete':
-            return redirect('/delete')
-
         elif request.form['submit_button'] == 'View':
             return redirect('/view')
-        elif request.form['submit_button'] == 'Export':
-          userDetails = request.form
-          product_id = userDetails['product_id']      
-          export(product_id)
+       
+        elif request.form['submit_button'] == 'Return':
+            return redirect('/')
      
         
     return render_template('index.html')
@@ -66,22 +70,25 @@ def edit():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Return':
           return redirect('/')
+
+        elif request.form['submit_button'] == 'View':
+          return redirect('/view')
     
-        if request.form['submit_button'] == 'Edit':
+        elif request.form['submit_button'] == 'Edit':
             userDetails = request.form
+            prevDetails = request.form
             product_id = userDetails['product_id']
             name = userDetails['name']
-            #email = userDetails['email']
             price = userDetails['price']
             department = userDetails['department']
             description = userDetails['description']
+            store_URL = userDetails['store_URL']
             cur = mysql.connection.cursor()
             #update query, used product id as primary key and overwrites the rest
-            cur.execute("UPDATE inventory SET name = (%s), price = (%s),department = (%s),description = (%s) WHERE product_id = (%s)",
-             (name,price,department,description, product_id))
+            cur.execute("UPDATE inventory SET name = (%s), price = (%s),department = (%s),description = (%s), store_URL = (%s) WHERE product_id = (%s)",(name,price,department,description,store_URL, [product_id]))
             mysql.connection.commit()
             cur.close()
-    return render_template('edit.html')
+    return render_template('edit.html', prevDetails = prevDetails)
 
 
 """ ---- Delete API ----- """
@@ -100,11 +107,13 @@ def delete():
             cur.execute("DELETE From inventory WHERE product_id = (%s)", [product_id])
             mysql.connection.commit()
             cur.close()
+        if request.form['submit_button'] == 'View':
+          return redirect('/view')
     return render_template('delete.html',product_id = product_id, name = name)
 
 """ ---- View API ----- """
 @app.route('/view',methods=['GET', 'POST'])
-def users():
+def view():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Return':
           return redirect('/')

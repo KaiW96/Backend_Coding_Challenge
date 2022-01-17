@@ -1,7 +1,24 @@
+<style>
+   
+    body {background-color: rgb(150, 191, 72);}
 
-<table border = 1>
-    <thead>
-        <h1>Current Inventory.</h1>
+    h1   {color: rgb(0, 0, 0);}
+    p    {color: red;}
+    .content{
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+</style>
+
+<body>
+        <table border = 1>
+            <div class = "content">
+        
+            <thead>
+                <h1>Current Inventory.</h1>
     <tr>
         <th>Product ID</th>
         <th>Name</th>
@@ -24,9 +41,14 @@
                 <td> {{inventory.description}} </td>
                 <td> {{inventory.store_URL}} </td>
                 <td>
-                    <form method="POST" action="">
-                            <input type="submit" name ="submit_button" value ="Edit"/> 
-                            <!--button name = "Export" value = "Hello">Export</button> -->
+                    <form method="POST" action="{{ url_for('edit') }}"  class=edit>
+                        <input type=hidden value="{{ inventory.product_id }}"name=product_id />
+                        <input type=hidden value="{{ inventory.name }}"name=name />
+                        <input type=hidden value="{{ inventory.price }}"name=price />
+                        <input type=hidden value="{{ inventory.department }}"name=department />
+                        <input type=hidden value="{{ inventory.description }}"name=description />
+                        <input type=hidden value="{{ inventory.store_URL }}"name=store_URL />
+                        <input type="submit" name ="submit_button" value ="Edit"/>
                           </form>
                      </td>
                 <td>
@@ -37,8 +59,8 @@
                   </form>
                 </td>
                 <td>
-                <!--form method="POST" action="">-->
-                <form method="POST" action="{{ url_for('index') }}"  class=index>
+           
+                <form method="POST" action="{{ url_for('view') }}"  class=view>
                         <input type=hidden value="{{ inventory.product_id }}"name=product_id />
                         <input type=hidden value="{{ inventory.name }}"name=name />
                         <input type="submit" name ="submit_button" value ="Export"/> 
@@ -54,3 +76,6 @@
     <br>
     <input type="submit" name ="submit_button" value ="Return"/>
   </form>
+  
+</div>
+</body>

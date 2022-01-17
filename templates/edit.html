@@ -1,22 +1,60 @@
+<style>
+    .background-image{
 
+        background-image: url('https://htmlemail.io/img/blog-shopify.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        color: #000000;
+        opacity: 0.5;
+    }
+
+    .content{
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+</style>
+
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class = "background-image"></div>
+        <div class="content">
 <title>
     Shopify Backend Developer Challenge</title>
     <h1>Edit a product</h1>
+    
+
 <form method="POST" action="">
-  Product ID <input type = "number" name = "product_id"/>
+  Product ID: {{prevDetails.product_id}}<input type = "hidden" name = product_id value = "{{prevDetails.product_id}}"/>
   <br>
-  Name <input type="text" name="name" />
   <br>
-  Price <input type ="number" name = "price" />
+  Name: {{prevDetails.name}}<input type="text" name="name" />
   <br>
-  Department <input type ="text" name = "department" />
   <br>
-  Description <input type ="text" name = "description" />
+  Price: {{prevDetails.price}} <input type ="number" name = "price" />
+  <br>
+  <br>
+  Department: {{prevDetails.department}} <input type ="text" name = "department" />
+  <br>
+  <br>
+  Description: {{prevDetails.description}} <input type ="text" name = "description" />
+  <br>
+  <br>
+  Store URL: {{prevDetails.store_URL}} <input type ="text" name = "store_URL"/>
+  <br>
   <br>
   <input type="submit" name ="submit_button" value ="Edit"/>
 </form>
 
+</html>
 <form method="POST" action="">
     <br>
     <input type="submit" name ="submit_button" value ="Return"/>
+    <input type="submit" name ="submit_button" value ="View"/>
   </form>
