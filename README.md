@@ -10,7 +10,8 @@ read, update and delete and item. You can also select item data to export as a c
 
 ## Youtube Demonstration
 The youtube link below will take you to the live demonstration of the application in case you are not able install or run the program.
-```Link-------------------------------------------```
+
+```https://youtu.be/rTghpAV7HNs```
 
 ## Authors
 * Kai Wang
