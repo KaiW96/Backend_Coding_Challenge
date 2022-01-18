@@ -51,5 +51,6 @@ Go to your default browser and run the program on localhost:5000
 <img width="929" alt="mainmenu" src="https://user-images.githubusercontent.com/77874716/149857352-ed44bc40-a12e-4629-8733-0d8cf3c3bd42.PNG">
 
 ## View Inventory:
-<img width="912" alt="view" src="https://user-images.githubusercontent.com/77874716/149858764-1350ce86-2092-48e8-8fa4-c517e0a92d3f.PNG">
+<img width="907" alt="view" src="https://user-images.githubusercontent.com/77874716/149859426-7948b5ad-eb2f-41b3-adab-8f91dc13b8cd.PNG">
+
 
