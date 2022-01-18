@@ -62,7 +62,6 @@ def index():
         elif request.form['submit_button'] == 'Return':
             return redirect('/')
      
-        
     return render_template('index.html')
 
 """ ---- Edit API ----- """
