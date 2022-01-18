@@ -60,7 +60,7 @@ If you need to make any changes, go to the app.py file and set your credentials 
 Go to your default browser and run the program on localhost:5000 or ```http://127.0.0.1:5000/```
 
 There are two ways to populate the database. The first method is by manually creating a new item in the application. 
-The second method is by using the provided SQL queries from Queries.sql in the database folder. You can run the queries in MySQL
+The second method is by using the provided SQL queries from Queries.sql in the database folder. You can run the queries in the MySQL
 Command Line Client by copying all the INSERT statements.
 
 # Sample Screenshots
