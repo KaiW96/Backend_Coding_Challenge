@@ -4,6 +4,10 @@ Updated: January 2022
 
 The repository will be set to public after the submission deadline on January 19th
 
+# Introduction
+This lightweight inventory management application is submitted as part of Shopify's coding challenge. This application can create,
+read, update and delete and item. You can also select item data to export as a csv file.
+
 ## Youtube Demonstration
 The youtube link below will take you to the live demonstration of the application in case you are not able install or run the program.
 ```Link-------------------------------------------```
