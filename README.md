@@ -53,7 +53,7 @@ If you need to make any changes, go to the app.py file and set your credentials 
 8. Now that you have all the dependencies needed to run this application, run the command
 	```python app.py```.
 
-Go to your default browser and run the program on localhost:5000.
+Go to your default browser and run the program on localhost:5000 or ```http://127.0.0.1:5000/```
 
 There are two ways to populate the database. The first method is by manually creating a new item in the application. 
 The second method is by using the provided SQL queries from Queries.sql in the database folder.
