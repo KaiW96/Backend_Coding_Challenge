@@ -53,4 +53,9 @@ Go to your default browser and run the program on localhost:5000
 ## View Inventory:
 <img width="907" alt="view" src="https://user-images.githubusercontent.com/77874716/149859426-7948b5ad-eb2f-41b3-adab-8f91dc13b8cd.PNG">
 
+## Edit Page:
+Select an item to edit. In this screenshot the fourth product was selected. Every parameter can be edited except 
+the Product ID since that is set as a primary key. 
+<img width="931" alt="edit" src="https://user-images.githubusercontent.com/77874716/149859619-8e2ba4c8-8342-4390-bf38-b841ff4dd3ce.PNG">
+
 
