@@ -21,6 +21,8 @@ Steps to compile and run this application
 
 For example:
   ```C:\Users\---Your path---\Learning-Management-System\database\database.sql```
+Followed with
+  ```use shopify_inventory```
   
 4. Navigate back to Learning-Management-System folder and in a terminal, enter the following commands
 
@@ -43,6 +45,10 @@ Go to your default browser and run the program on localhost:5000
 
 # Sample Screenshots
 
-## Login Page:
+## Main Menu:
 
 <img width="929" alt="mainmenu" src="https://user-images.githubusercontent.com/77874716/149857352-ed44bc40-a12e-4629-8733-0d8cf3c3bd42.PNG">
+
+## View Inventory:
+<img width="912" alt="view" src="https://user-images.githubusercontent.com/77874716/149858764-1350ce86-2092-48e8-8fa4-c517e0a92d3f.PNG">
+
