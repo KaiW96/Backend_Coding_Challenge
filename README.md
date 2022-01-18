@@ -20,7 +20,8 @@ Steps to compile and run this application
 3. Source the sql file on the MySQL Command Line Client(make sure to include your full path in the command)
 
 For example:
-  ```C:\Users\---Your path---\Learning-Management-System\database\database.sql```
+  ```C:\Users\---Your path---\Backend_Coding_Challenge\database\database.sql```
+
 Followed with
   ```use shopify_inventory```
   
