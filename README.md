@@ -7,6 +7,10 @@ The repository will be set to public after the submission deadline on January 19
 ## Authors
 * Kai Wang
 
+# Required Technologies
+Python 3.6 and above
+MySQl database
+
 # Installation
 
 Steps to compile and run this application
@@ -36,3 +40,9 @@ The virtual environment folder is included for now to include all requirements a
 	```python app.py```.
 
 Go to your default browser and run the program on localhost:5000
+
+# Sample Screenshots
+
+## Login Page:
+
+<img width="929" alt="mainmenu" src="https://user-images.githubusercontent.com/77874716/149857352-ed44bc40-a12e-4629-8733-0d8cf3c3bd42.PNG">
