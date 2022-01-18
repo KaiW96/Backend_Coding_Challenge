@@ -92,5 +92,5 @@ Below is a screen shot of product 7 data exported in a csv format.
 
 | API Endpoint  | Description   | GET  | POST | DELETE  |
 | -------------	| ------------- | ---- | ---- | ------- |
-| /  | Main Menu  |
+| /  			| Main Menu  	|Query to view inventory| redirect to create | |
 | Content Cell  | Content Cell  |
