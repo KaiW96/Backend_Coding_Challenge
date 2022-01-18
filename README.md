@@ -44,6 +44,8 @@ Followed with
 	```.\env\Scripts\activate```
 
 	```pip install flask```
+	
+	```pip install flask_mysqldb```
 
 The virtual environment folder is included for now to include all requirements and facilitate testing.
 
