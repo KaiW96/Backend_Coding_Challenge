@@ -84,6 +84,6 @@ main menu or view inventory.
 
 
 ## Export to CSV:
-In the view inventory page, click on the Export button to get the data of the selected product. A csv file will be created in the current directory
-and the user will be redirected to the main menu. Below is a screen shot of product 7 data exported in a csv format. 
+In the view inventory page, click on the Export button to get the data of the selected product. A csv file will be created in the current directory.
+Below is a screen shot of product 7 data exported in a csv format. 
 <img width="725" alt="export" src="https://user-images.githubusercontent.com/77874716/149861486-91bb0381-286b-492c-862d-35d8a170bcda.PNG">

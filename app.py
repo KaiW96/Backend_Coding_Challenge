@@ -51,6 +51,8 @@ def index():
             department = userDetails['department']
             description = userDetails['description']
             store_URL = userDetails['store_URL']
+
+            #Insert(Create) query
             cur = mysql.connection.cursor()
             cur.execute("INSERT INTO inventory(name,price,department,description,store_URL) VALUES (%s, %s,%s,%s,%s)", (name,price,department,description,store_URL))
             mysql.connection.commit()
@@ -105,24 +107,32 @@ def delete():
             product_id = userDetails['product_id']
             name = userDetails['name']
             cur = mysql.connection.cursor()
-            #delete query, used product id as primary key and overwrites the rest
+            #delete query, uses product id to identify unique item to delete
             cur.execute("DELETE From inventory WHERE product_id = (%s)", [product_id])
             mysql.connection.commit()
             cur.close()
         if request.form['submit_button'] == 'View':
           return redirect('/view')
+          #render deleted product id and name on the delete page
     return render_template('delete.html',product_id = product_id, name = name)
 
 """ ---- View API ----- """
 @app.route('/view',methods=['GET', 'POST'])
 def view():
     if request.method == 'POST':
+        #return to main maenu
         if request.form['submit_button'] == 'Return':
           return redirect('/')
+        
+        #redirect to edit page
         elif request.form['submit_button'] == 'Edit':
           return redirect('/edit')
+        
+        #redirect to delete page
         elif request.form['submit_button'] == 'Delete':
           return redirect('/delete')
+
+        #redirect to export function
         elif request.form['submit_button'] == 'Export':
           userDetails = request.form
           product_id = userDetails['product_id']      
@@ -130,10 +140,11 @@ def view():
           
 
     cur = mysql.connection.cursor()
-    resultValue = cur.execute("SELECT * FROM inventory")
+    cur.execute("SELECT * FROM inventory")
     userDetails = cur.fetchall()
     return render_template('view.html',userDetails=userDetails)
 
+""" ---- export function ----- """
 def export(product_id):
     # export to csv functionality
                header = ['Product ID', 'Name','Price', 'Department', 'Description','Store URL']
@@ -146,8 +157,7 @@ def export(product_id):
                result = cur.fetchall()
                c = csv.writer(open('product_data.csv', 'w',encoding='utf-8'))
                c.writerow(header)
-               #c.writerow(result)
-               
+               #writes information in the csv file
                for row in result:
                    print(product_id)
                    c.writerow(row)
