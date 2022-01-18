@@ -12,7 +12,7 @@ The youtube link below will take you to the live demonstration of the applicatio
 * Kai Wang
 
 # Required Technologies
-Python 3.6 and above
+Python 3.6 and above <br />
 MySQl database
 
 # Installation
