@@ -53,6 +53,11 @@ Go to your default browser and run the program on localhost:5000
 ## View Inventory:
 <img width="907" alt="view" src="https://user-images.githubusercontent.com/77874716/149859426-7948b5ad-eb2f-41b3-adab-8f91dc13b8cd.PNG">
 
+## Create Item Page:
+Enter the Name, Price, Department, Description and Store URL. A unique Product ID will automatically be created.
+<img width="930" alt="create" src="https://user-images.githubusercontent.com/77874716/149860638-aebfd1bb-e39f-4e7d-94e1-e5dd9d2763b5.PNG">
+
+
 ## Edit Page:
 Select an item to edit. In this screenshot the fourth product from the inventory was selected. Every parameter can be edited except 
 the Product ID since it is set as a primary key. 
