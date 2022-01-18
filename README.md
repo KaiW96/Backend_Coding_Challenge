@@ -15,7 +15,7 @@ The youtube link below will take you to the live demonstration of the applicatio
 ## Authors
 * Kai Wang
 
-# Required Technologies
+## Required Technologies
 Python 3.6 and above <br />
 MySQl database
 
