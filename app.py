@@ -33,15 +33,15 @@ mysql = MySQL(app)
 def mainmenu():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Create':
-            return redirect('/index')
+            return redirect('/create')
         elif request.form['submit_button'] == 'View':
             return redirect('/view')
         
     return render_template('mainmenu.html')
 
-""" ---- Index API ----- """
-@app.route('/index', methods=['GET', 'POST'])
-def index():
+""" --- Create API ----- """
+@app.route('/create', methods=['GET', 'POST'])
+def create():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Create':
         # Fetch form data
@@ -64,7 +64,7 @@ def index():
         elif request.form['submit_button'] == 'Return':
             return redirect('/')
      
-    return render_template('index.html')
+    return render_template('create.html')
 
 """ ---- Edit API ----- """
 @app.route('/edit',methods=['GET', 'POST'])
