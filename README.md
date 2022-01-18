@@ -43,6 +43,13 @@ Followed with
 
 The virtual environment folder is included for now to include all requirements and facilitate testing.
 
+You may or may not need to change the MySQL credentials such as password.
+In my code, the Host is set as ```localhost```
+user as ```root```, port as ```3306```
+and no password is set.
+
+If you need to make any changes, go to the app.py file and set your credentials in the code located in lines 20 to 28
+
 8. Now that you have all the dependencies needed to run this application, run the command
 	```python app.py```.
 

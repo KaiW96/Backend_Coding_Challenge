@@ -1,20 +1,22 @@
+""" 
+app.py 
+Final version
+Updated January 18th, 2022
+
+Written by: Kai Wang
+"""
+
+""" -----imports------"""
 from flask import Flask, render_template, request, redirect
 from flask_mysqldb import MySQL
 import csv
-import sys
-import pandas as pd
 import MySQLdb
-
-#import yaml
 
 app = Flask(__name__)
 
-# Configure db
-#db = yaml.load(open('db.yaml'))
-#app.config['MYSQL_HOST'] = db['localhost']
-#app.config['MYSQL_USER'] = db['mysql_user']
-#app.config['MYSQL_PASSWORD'] = db['mysql_password']
-#app.config['MYSQL_DB'] = db['mysql_db']
+""" -----MySQL connection setup-----
+	Change the password to the 
+	password of your system 		"""
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -23,7 +25,6 @@ app.config['MYSQL_PORT'] = 3306
 app.config['MYSQL_PASSWORD'] = ""
 app.config['MYSQL_DB'] = "shopify_inventory"
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-#CORS(app, expose_headers='Authorization')
 
 mysql = MySQL(app)
 
