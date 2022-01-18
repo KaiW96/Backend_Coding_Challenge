@@ -89,7 +89,8 @@ Below is a screen shot of product 7 data exported in a csv format.
 <img width="725" alt="export" src="https://user-images.githubusercontent.com/77874716/149861486-91bb0381-286b-492c-862d-35d8a170bcda.PNG">
 
 # Routes
-| API Endpoints | Description | GET | POST | DELETE |
-| --- | --- |
-| `/` | Main Menu | Query all inventory | redirect to create | |
-| `git diff` | Show file differences that **haven't been** staged |
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
