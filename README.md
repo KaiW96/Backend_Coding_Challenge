@@ -90,7 +90,7 @@ Below is a screen shot of product 7 data exported in a csv format.
 
 # Routes
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
+| API Endpoint  | Description   | GET  | POST | DELETE  |
+| -------------	| ------------- | ---- | ---- | ------- |
+| /  | Main Menu  |
 | Content Cell  | Content Cell  |
