@@ -75,6 +75,7 @@ def edit():
           return redirect('/view')
     
         elif request.form['submit_button'] == 'Edit':
+            #Get all the details for what we want changed
             userDetails = request.form
             prevDetails = request.form
             product_id = userDetails['product_id']
@@ -83,8 +84,9 @@ def edit():
             department = userDetails['department']
             description = userDetails['description']
             store_URL = userDetails['store_URL']
-            cur = mysql.connection.cursor()
+           
             #update query, used product id as primary key and overwrites the rest
+            cur = mysql.connection.cursor()
             cur.execute("UPDATE inventory SET name = (%s), price = (%s),department = (%s),description = (%s), store_URL = (%s) WHERE product_id = (%s)",(name,price,department,description,store_URL, [product_id]))
             mysql.connection.commit()
             cur.close()

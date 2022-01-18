@@ -80,7 +80,8 @@ the Product ID since it is set as a primary key.
 ## Delete Page:
 Select an item to delete. Once the Item is deleted it will take you to the confirmation screen below. From here you can either return to 
 main menu or view inventory.
-<img width="931" alt="delete" src="https://user-images.githubusercontent.com/77874716/149860089-23c97720-10a0-490c-a588-6b24bf8c844b.PNG">
+<img width="932" alt="delete" src="https://user-images.githubusercontent.com/77874716/149864865-f1d1b47e-6bdb-4188-8205-34e1fb4e39ad.PNG">
+
 
 ## Export to CSV:
 In the view inventory page, click on the Export button to get the data of the selected product. A csv file will be created in the current directory
