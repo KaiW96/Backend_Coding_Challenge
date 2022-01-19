@@ -8,7 +8,7 @@ The repository will be set to public after the submission deadline on January 19
 This lightweight inventory management application is submitted as part of Shopify's coding challenge. This application can create,
 read, update and delete and item. You can also select item data to export as a csv file.
 
-The front end is created using HTML templates. The backend is created using flask which is written in Python. MySQL was chosen as the database for this project.
+The front end is created using HTML templates. The backend is created using the flask framework which is written in Python. MySQL was chosen as the database for this project.
 
 ## Youtube Demonstration
 The youtube link below will take you to the live demonstration of the application in case you are not able install or run the program.
