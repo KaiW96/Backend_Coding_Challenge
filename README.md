@@ -10,14 +10,6 @@ read, update and delete and item. You can also select item data to export as a c
 
 The front end is created using HTML templates. The backend is created using the flask framework which is written in Python. MySQL was chosen as the database for this project.
 
-## Youtube Demonstration
-The youtube link below will take you to the live demonstration of the application in case you are not able install or run the program.
-
-[Link to Youtube Demo] https://youtu.be/rTghpAV7HNs
-
-## Authors
-* Kai Wang
-
 ## Required Technologies
 Python 3.6 and above <br />
 MySQL database
